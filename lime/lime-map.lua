@@ -65,7 +65,7 @@ function Map:new(filename, baseDirectory, customMapParams)
 	local path = system.pathForFile(filename, baseDirectory or system.ResourcesDirectory)
 	
 	
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Lychee: Loading Map - " .. filename)
 	end
 	
@@ -212,7 +212,7 @@ function Map:new(filename, baseDirectory, customMapParams)
 					
 			self.tileSets[#self.tileSets + 1] = tileSet
 					
-			if(lime.isDebugModeEnabled() and tileSet) then
+			if(lime.lime.isDebugModeEnabled() and tileSet) then
 				print("Lime-Lychee: Loaded TileSet - " .. tileSet.name)
 			end
 					
@@ -222,7 +222,7 @@ function Map:new(filename, baseDirectory, customMapParams)
 				
 			self.tileLayers[#self.tileLayers + 1] = tileLayer
 				
-			if(lime.isDebugModeEnabled() and tileLayer) then
+			if(lime.lime.isDebugModeEnabled() and tileLayer) then
 				print("Lime-Lychee: Loaded Tile Layer - " .. tileLayer.name)
 			end
 			
@@ -232,7 +232,7 @@ function Map:new(filename, baseDirectory, customMapParams)
 				
 			self.objectLayers[#self.objectLayers + 1] = objectLayer
 				
-			if(lime.isDebugModeEnabled() and objectLayer) then
+			if(lime.lime.isDebugModeEnabled() and objectLayer) then
 				print("Lime-Lychee: Loaded Object Layer - " .. objectLayer.name)
 			end
 					
@@ -254,7 +254,7 @@ function Map:new(filename, baseDirectory, customMapParams)
 						
 						property = self:setProperty(attributes.name, attributes.value)
 						
-						if(lime.isDebugModeEnabled() and property) then
+						if(lime.lime.isDebugModeEnabled() and property) then
 							print("Lime-Lychee: Loaded Map Property - " .. property.name)
 						end
 					end
@@ -1461,7 +1461,7 @@ end
 -- @return The newly created world a visual representation of the map.
 function Map:create()
 	
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Coconut: Creating map - " .. self.filename)
 	end
 	
@@ -1533,7 +1533,7 @@ function Map:create()
 	
 	self.visualCreated = true
 	
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Coconut: Map Created - " .. self.filename)
 	end
 	
@@ -1551,7 +1551,7 @@ end
 --- Builds the physical representation of the Map.
 function Map:build()
 
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Banana: Building map - " .. self.filename)
 	end
 
@@ -1564,31 +1564,31 @@ function Map:build()
 	
 	physics.setGravity( self:getPropertyValue("Physics:GravityX") or gravityX, self:getPropertyValue("Physics:GravityY") or gravityY )
 	
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Banana: Setting gravity (x|y) to " .. (self:getPropertyValue("Physics:GravityX") or gravityX) .. "|" .. (self:getPropertyValue("Physics:GravityY") or gravityY))
 	end
 	
 	physics.setScale( self:getPropertyValue("Physics:Scale") or 30 ) 
 	
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Banana: Setting scale to " .. (self:getPropertyValue("Physics:Scale") or 30))
 	end
 	
 	physics.setDrawMode( self:getPropertyValue("Physics:DrawMode") or "normal" ) 
 
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Banana: Setting draw mode to " .. (self:getPropertyValue("Physics:DrawMode") or "normal"))
 	end
 	
 	physics.setPositionIterations( self:getPropertyValue("Physics:PositionIterations") or 8 ) 
 	
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Banana: Setting position iterations to " .. (self:getPropertyValue("Physics:PositionIterations") or 8))
 	end
 	
 	physics.setVelocityIterations( self:getPropertyValue("Physics:VelocityIterations") or 3 ) 
 	
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Banana: Setting velocity iterations to " .. (self:getPropertyValue("Physics:VelocityIterations") or 3))
 	end	
 			
@@ -1602,7 +1602,7 @@ function Map:build()
 	
 	self.physicalCreated = true
 	
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Banana: Map Built - " .. self.filename)
 	end
 	
@@ -1665,11 +1665,11 @@ function Map:reload()
 	end
 	
 	if createVisual then
-		lime.createVisual(self)
+		lime.lime.createVisual(self)
 	end
 	
 	if createPhysical then
-		lime.buildPhysical(self)
+		lime.lime.buildPhysical(self)
 	end
 	
 	return self

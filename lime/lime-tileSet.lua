@@ -139,7 +139,7 @@ function TileSet:new(data, map, firstgid, rootDir)
 
 				if(tileSet) then
 				
-					if(lime.isDebugModeEnabled()) then
+					if(lime.lime.isDebugModeEnabled()) then
 						print("Lime-Lychee: Loaded External Tileset - " .. utils:getFilenameFromPath(path))
 					end
 					
@@ -163,7 +163,7 @@ function TileSet:new(data, map, firstgid, rootDir)
 				-- Check if there is a HD version of the tileset image
 				local path = system.pathForFile(self.rootDir .. self.retinaSource, system.ResourceDirectory)
 				
-				if(lime.isDebugModeEnabled() and not path) then
+				if(lime.lime.isDebugModeEnabled() and not path) then
 					print("Lime-Lychee: If you aren't intending to use Retina spritesheets then you can ignore the previous warning.")
 				end
 				

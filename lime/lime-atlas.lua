@@ -51,7 +51,7 @@ function Atlas:new()
     
     self.globe = display.newGroup()
 	
-	lime.disableScreenCulling()
+	lime.lime.disableScreenCulling()
 
     return self
     

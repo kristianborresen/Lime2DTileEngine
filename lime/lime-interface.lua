@@ -30,7 +30,7 @@ defaultTextColour = {0, 0, 0, 255}
 ----									REQUIRED MODULES										----
 ----------------------------------------------------------------------------------------------------
 
-local ui = utils:loadModuleSafely("lime.ui")
+local ui = utils:loadModuleSafely("ui")
 
 ----------------------------------------------------------------------------------------------------
 ----									PRIVATE METHODS											----
@@ -81,7 +81,7 @@ local onWebPopupObject = function(object)
 		end	
 	end
 	
-	if lime.isSimulator then
+	if lime.lime.isSimulator then
 		object.sprite = display.newRect(object.objectLayer.group, object.x, object.y, object.width or 1, object.height or 1)
 		object.sprite:setFillColor(255, 255, 255, 255)
 		object.sprite.strokeWidth = 3
@@ -93,7 +93,7 @@ end
 
 local onTextField = function(object)
 
-	if lime.isSimulator then
+	if lime.lime.isSimulator then
 		object.sprite = display.newRect(object.objectLayer.group, object.x, object.y, object.width or 1, object.height or 1)
 		object.sprite:setFillColor(255, 255, 255, 255)
 		object.sprite.strokeWidth = 3
@@ -127,7 +127,7 @@ end
 
 local onTextBox = function(object)
 
-	if lime.isSimulator then
+	if lime.lime.isSimulator then
 		object.sprite = display.newRect(object.objectLayer.group, object.x, object.y, object.width or 1, object.height or 1)
 		object.sprite:setFillColor(255, 255, 255, 255)
 		object.sprite.strokeWidth = 3

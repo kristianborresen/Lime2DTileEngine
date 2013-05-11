@@ -1226,7 +1226,7 @@ function Utils:readInConfigFile(definition, object)
 				end
 			end
 			
-			if(lime.isDebugModeEnabled()) then
+			if(lime.lime.isDebugModeEnabled()) then
 				print("Lime-Lychee: Loaded Config File - " .. path)
 			end
 		end

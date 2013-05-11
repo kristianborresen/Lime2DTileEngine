@@ -435,7 +435,7 @@ end
 --- Creates the visual debug representation of the ObjectLayer.
 function ObjectLayer:create()
 	
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Coconut: Creating object layer - " .. self.name)
 	end
 	
@@ -492,7 +492,7 @@ end
 --- Builds the physical representation of the ObjectLayer.
 function ObjectLayer:build()
 
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Banana: Building Object Layer - " .. self.name)
 	end	
 	

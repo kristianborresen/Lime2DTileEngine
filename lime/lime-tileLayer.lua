@@ -332,7 +332,7 @@ function TileLayer:show()
 		
 		local tiles = self.tiles
 		
-		if not lime.isScreenCullingEnabled() then
+		if not lime.lime.isScreenCullingEnabled() then
 			for i=1, #tiles, 1 do	
 				tiles[i]:show()	
 			end	
@@ -354,7 +354,7 @@ function TileLayer:hide()
 
 	local tiles = self.tiles
 	
-	if not lime.isScreenCullingEnabled() then
+	if not lime.lime.isScreenCullingEnabled() then
 		for i=1, #tiles, 1 do
 			tiles[i]:hide()
 		end
@@ -546,7 +546,7 @@ function TileLayer:createTileAt(gid, position)
 	if tile then
 	
 		if position.row and position.column then
-			position = lime.utils:gridToWorldPosition( self.map, position )
+			position = lime.lime.utils:gridToWorldPosition( self.map, position )
 		end
 		
 		tile:setPosition(position.x, position.y)
@@ -734,7 +734,7 @@ function TileLayer:create()
 	
 	self.group = display.newGroup()
 
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Coconut: Creating layer - " .. self.name)
 	end
 		
@@ -793,7 +793,7 @@ end
 --- Builds the physical representation of the TileLayer.
 function TileLayer:build()
 		
-	if(lime.isDebugModeEnabled()) then
+	if(lime.lime.isDebugModeEnabled()) then
 		print("Lime-Banana: Building Tile Layer - " .. self.name)
 	end	
 	
